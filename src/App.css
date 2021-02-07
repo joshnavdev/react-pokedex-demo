@@ -2,10 +2,16 @@
   text-align: center;
 }
 
+.Search {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
 .SearchInput {
   padding: 10px;
-  width: 30%;
-  margin: 10px 10px 0px 10px;
+  width: 100%;
+  margin: 10px 0px 0px 10px;
   border-radius: 25px;
   outline: none;
   font-size: 20px;
@@ -13,9 +19,39 @@
 }
 
 .SearchButton {
-  padding: 14px 20px;
+  /* padding: 20px 20px; */
   border-radius: 50%;
   outline: none;
+  margin: 10px 10px 0 0;
+  /* box-shadow: 2px 2px 3px #999; */
+  font-size: 30px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.05s;
+  font-weight: bold;
+}
+
+.SearchButton:active { 
+  transform: scale(0.9); 
+  /* Scaling button to 0.98 to its original size */ 
+  /* box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);  */
+  /* Lowering the shadow */ 
+}
+.SearchButton:hover { 
+  transform: scale(1.1); 
+  /* Scaling button to 0.98 to its original size */ 
+  /* box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);  */
+  /* Lowering the shadow */ 
+}
+
+
+@media only screen and (min-width: 600px) {
+  .SearchInput { width: 50% }
+}
+
+@media only screen and (min-width: 768px) {
+  .SearchInput { width: 30% }
 }
 
 .Card {
@@ -51,4 +87,5 @@
   justify-content: center;
   padding: 20px;
   flex-wrap: wrap;
+  min-width: 355px;
 }
