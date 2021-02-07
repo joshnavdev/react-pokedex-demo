@@ -10,7 +10,7 @@ This project was created to put into practices our knowledge in the basic concep
 - **Thinking In React.**
 
 ## How to Use
-It's a simple pokedex whitn a search input, you have type the name of your favorite Pokemon to find it.
+It's a simple pokedex with a search input where you can type the name of your favorite Pokemon to find it.
 
 There is a special way to find by types, you only have to type **`type:{type your are looking for}`**. For example `type:fire`.
 
