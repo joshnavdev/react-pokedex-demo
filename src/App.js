@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import PokemonSearch from './PokemonSearch';
+import PokemonCards from './PokemonCards';
+import pokemonsData from './pokemons.json'
 
 function App() {
+  const [search, setSearch] = useState('');
+
+  const onSearch = (ev) => {
+    const value = ev.target.value;
+    setSearch(value);
+  }
+
+  const onClick = (ev) => {
+    ev.preventDefault();
+
+    setSearch('');
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PokemonSearch
+        search={search}
+        onSearch={onSearch}
+        onClick={onClick}
+      />
+      <PokemonCards filter={search} data={pokemonsData}/>
     </div>
   );
 }
